@@ -1,0 +1,11 @@
+build:
+    - ./buildrpm.py
+
+install:
+    - yum install -y *.rpm
+
+release:
+    - rpm-release *.rpm
+
+finalize:
+    - ./docker-build.py

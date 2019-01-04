@@ -1,0 +1,16 @@
+version: "2"
+services:
+  app:
+    image: xxx.xxx.xxx:80/B2W/B2W_frontend:${IMG_TAG}
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 8008:80
+    environment:
+      LOG_LEVEL: debug
+      CONF_MYSQL_B2W_HOST: 127.0.0.1
+      CONF_MYSQL_B2W_USER: root
+      CONF_MYSQL_B2W_PASSWD: root
+      CONF_MYSQL_B2W_PORT: 3306
+      CONF_MYSQL_B2W_DB: b2w

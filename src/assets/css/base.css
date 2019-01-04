@@ -1,0 +1,17 @@
+/* CSS Document */
+body, p, ul, ol, button, input, select, textarea {
+    font-family: proxima-nova, serif;
+    font-size: 15px;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: .02em;
+    line-height: 1.6em;
+}
+.copyright{
+	font-family: proxima-nova, serif;
+    font-size: 15px;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: .02em;
+    line-height: 1.6em;
+}

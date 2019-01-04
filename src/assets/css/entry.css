@@ -1,0 +1,84 @@
+body {
+	background-size: cover;
+}
+.login-background {
+	background-color: #f1f1f1;
+	/*就是这个position:fixed起作用，生成相对定位的元素，相对于其正常位置进行定位。*/
+	position: fixed;
+	/*这里都是对外边距进行设置*/
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	/*设置div的宽和高*/
+	height: 100%;
+	/*设置超出范围后，就隐藏超出的部分*/
+	overflow: hidden;
+	/*设置鼠标的样式*/
+	cursor: move;
+}
+.login-container {
+	margin: 0 auto;
+	width: 540px;
+	height: 580px;
+}
+.login-area {
+	background-color: #fff;
+	width: 360px;
+	height: 340px;
+	position: relative;
+	top: 120px;
+	margin: 0 auto;
+	padding: 20px 40px;
+}
+.login-failtext {
+	font-size: 14px;
+	margin-top: -8px;
+	margin-left: 120px;
+	color: #F0B267;
+}
+.login-username {
+}
+.login-password {
+}
+.login-hint {
+	color: #72777c;
+}
+.login-password-hint {
+	margin-top: 20px;
+}
+.login-text {
+	width: 280px;
+	height: 40px;
+	background-color: rgb(251, 251, 251);
+	padding-left: 35px;
+	color: #7C7C7C;
+	font-weight: 800;
+	border: 1px solid #ddd;
+	border-radius: 0;
+	margin: 0 auto;
+}
+.login-button {
+	display: block;
+	width: 100px;
+	height: 40px;
+	font-size: 16px;
+	border: none;
+	margin: 50px auto 0;
+	background: #0085ba;
+	border-color: #0073aa #006799 #006799;
+	box-shadow: 0 1px 0 #006799;
+	color: #fff;
+	text-decoration: none;
+	text-shadow: 0 -1px 1px #006799, 1px 0 1px #006799, 0 1px 1px #006799, -1px 0 1px #006799
+}
+.welcome-logo {
+	/*插入背景图*/
+	background-color: darkorange;
+	width: 83px;
+	height: 83px;
+	position: relative;
+	top: 80px;
+	margin: 0 auto;
+}

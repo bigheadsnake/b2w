@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="/s/img/favicon.ico" type="image/x-icon" >
+<link rel="shortcut icon" href="/s/img/favicon.ico" type="image/x-icon" >
+<title>${page_title}</title>
+<!-- Bootstrap core CSS -->
+<link href="/s/css/bootstrap.min.css" rel="stylesheet">
+<link href="/s/css/base.css" rel="stylesheet">
+<link href="/s/css/entry.css" rel="stylesheet">
+</head>
+<body>
+<div class="login-background">
+  <div class="login-container">
+    <div class="welcome-logo">LOGO ICI</div>
+    <div class="login-area">
+      <form action="/login" role="form" method="POST">
+        <div class="login-failtext">
+         % if error == "1":
+             您输入的登录信息有误
+         % elif error == "2":
+             您无权访问指定页面
+         % elif error == "3":
+             您输入了非法参数
+         % endif
+        </div>
+        <div class="login-hint">
+        Username
+        </div>
+        <div class="login-username">
+          <input type="text" class="form-control login-text" id="username" name="username" title="">
+        </div>
+        <div class="login-hint login-password-hint">
+        Password
+        </div>
+        <div class="login-password">
+          <input type="password" class="form-control login-text" id="password" name="password" title="">
+        </div>
+        <div>
+        <button type="submit" class="login-button">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+<!-- /.login-background -->
+<%include file="footer.html" />
+<script src="/s/js/jquery-3.3.1.min.js"></script>
+</body>
+</html>
