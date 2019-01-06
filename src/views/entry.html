@@ -17,31 +17,27 @@
 <body>
 <div class="login-background">
   <div class="login-container">
-    <div class="welcome-logo">LOGO ICI</div>
+    <div class="welcome-logo"></div>
     <div class="login-area">
       <form action="/login" role="form" method="POST">
-        <div class="login-failtext">
-         % if error == "1":
-             您输入的登录信息有误
-         % elif error == "2":
-             您无权访问指定页面
-         % elif error == "3":
-             您输入了非法参数
-         % endif
-        </div>
-        <div class="login-hint">
-        Username
-        </div>
         <div class="login-username">
-          <input type="text" class="form-control login-text" id="username" name="username" title="">
+            <label for="username" class="login-hint">Username</label><input type="text" class="form-control login-text" id="username" name="username" title="">
         </div>
         <div class="login-hint login-password-hint">
-        Password
         </div>
         <div class="login-password">
-          <input type="password" class="form-control login-text" id="password" name="password" title="">
+          <label for="password" class="login-hint">Password</label><input type="password" class="form-control login-text" id="password" name="password" title="">
         </div>
         <div>
+        <div class="login-failtext">
+         % if error == "1":
+             Wrong username or password
+         % elif error == "2":
+             You are not authorised to visit that page
+         % elif error == "3":
+             You have input illegal parameters
+         % endif
+        </div>
         <button type="submit" class="login-button">Login</button>
         </div>
       </form>

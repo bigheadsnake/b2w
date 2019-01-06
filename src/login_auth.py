@@ -45,18 +45,16 @@ class User:
         finally:
             pass
 
-
     def logout(self):
         self.remove_cookie()
         self.logged = False
         self.username = None
         return True
 
-
     def validate(self):
 
         # now check cookie
-        username = request.get_cookie( '__b2w' , secret = self.COOKIE_SECRET_KEY )
+        username = request.get_cookie('__b2w', secret=self.COOKIE_SECRET_KEY)
         user = dbutils.query_single(self.db, 'SELECT username, password, salt, cate'
                                              ' FROM b2w_users WHERE username = \'%s\'' % username)
         if user:
@@ -72,18 +70,18 @@ class User:
 
     def set_cookie(self, account):
         response.set_cookie(
-                '__b2w',
-                account,
-                secret = self.COOKIE_SECRET_KEY,
-                path = '/'
+            '__b2w',
+            account,
+            secret=self.COOKIE_SECRET_KEY,
+            path='/'
         )
 
     def remove_cookie(self):
         response.set_cookie(
-                '__b2w',
-                '',
-                secret = self.COOKIE_SECRET_KEY,
-                path = '/'
+            '__b2w',
+            '',
+            secret=self.COOKIE_SECRET_KEY,
+            path='/'
         )
 
     def check_user(self):
@@ -92,4 +90,3 @@ class User:
         else:
             # 更新用户信息
             return True
-

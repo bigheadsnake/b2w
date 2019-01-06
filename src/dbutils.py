@@ -63,8 +63,8 @@ def insert_or_update_data(db, tbl_name, update_fields, recs, interval=2048):
             db.commit()
 
 
-def get_table_dat(db, tbl_name, sortfield=None, order='', limit=None, where=None, select_fields='*'):
-    query = db.form_sql(tbl_name, sortfield, order, limit, where, select_fields)
+def get_table_dat(db, tbl_name, sort_field=None, order='', limit=None, where=None, select_fields='*'):
+    query = db.form_sql(tbl_name, sort_field, order, limit, where, select_fields)
     result = db.get_all(query)
 
     fields = None

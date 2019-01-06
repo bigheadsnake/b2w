@@ -1,11 +1,10 @@
 /* CSS Document */
 body, p, ul, ol, button, input, select, textarea {
-    font-family: proxima-nova, serif;
-    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
     font-weight: 300;
-    font-style: normal;
-    letter-spacing: .02em;
-    line-height: 1.6em;
+    line-height: 1.7em;
+    color: #999;
 }
 .copyright{
 	font-family: proxima-nova, serif;

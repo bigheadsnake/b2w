@@ -6,9 +6,6 @@ from bottle import route, run, template, static_file, install, mako_view, reques
 from bottle_mysql import MysqlPlugin
 from bottle_auth import AuthPlugin
 import priviledge
-import json
-import sys
-import dbutils
 import utils
 
 install(MysqlPlugin())

@@ -8,6 +8,7 @@ no_limit_urls = {
     '/entry': 1
 }
 
+
 def nav_display_flags(db, user):
     return {}
 

@@ -5,6 +5,7 @@ from random import Random
 from utils import make_databases
 import hashlib
 import dbutils
+import environ
 
 
 # 获取由4位随机大小写字母、数字组成的salt值
@@ -34,5 +35,6 @@ def registration(db, username, password, salt):
 
 # 在这里输入要注册的用户名密码
 if __name__ == '__main__':
+    environ.run_env()
     use_salt = create_salt()
     registration('bigheadsnake', 'Dragoon881112', use_salt)

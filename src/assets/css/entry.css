@@ -21,24 +21,23 @@ body {
 .login-container {
 	margin: 0 auto;
 	width: 540px;
-	height: 580px;
+	height: 750px;
 }
 .login-area {
 	background-color: #fff;
 	width: 360px;
 	height: 340px;
 	position: relative;
-	top: 120px;
-	margin: 0 auto;
+	margin: 180px auto 0px;
 	padding: 20px 40px;
 }
 .login-failtext {
 	font-size: 14px;
-	margin-top: -8px;
-	margin-left: 120px;
+	margin-top: 15px;
 	color: #F0B267;
 }
 .login-username {
+	margin-top: 15px;
 }
 .login-password {
 }
@@ -65,7 +64,7 @@ body {
 	height: 40px;
 	font-size: 16px;
 	border: none;
-	margin: 50px auto 0;
+	margin: 20px auto 0;
 	background: #0085ba;
 	border-color: #0073aa #006799 #006799;
 	box-shadow: 0 1px 0 #006799;
@@ -75,10 +74,10 @@ body {
 }
 .welcome-logo {
 	/*插入背景图*/
-	background-color: darkorange;
-	width: 83px;
-	height: 83px;
+	background: url("/s/img/b2w-logo.png") no-repeat top left;
+	width: 240px;
+	height: 140px;
 	position: relative;
-	top: 80px;
+	top: 100px;
 	margin: 0 auto;
 }

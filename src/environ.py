@@ -3,6 +3,7 @@
 
 import os
 
+
 def run_env():
     os.environ['CONF_MYSQL_B2W_HOST'] = '127.0.0.1'
     os.environ['CONF_MYSQL_B2W_USER'] = 'root'
