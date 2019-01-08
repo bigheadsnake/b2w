@@ -6,11 +6,19 @@ body, p, ul, ol, button, input, select, textarea {
     line-height: 1.7em;
     color: #999;
 }
-.copyright{
-	font-family: proxima-nova, serif;
+
+.copyright {
+    font-family: proxima-nova, serif;
     font-size: 15px;
     font-weight: 300;
     font-style: normal;
     letter-spacing: .02em;
     line-height: 1.6em;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.b2w-footer {
+    width: 100%;
+    float: left;
 }

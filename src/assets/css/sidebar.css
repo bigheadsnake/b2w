@@ -51,28 +51,25 @@ a:focus {
 
 .wrapper {
     display: flex;
-    width: 100%;
+    width: 280px;
+    float: left;
+    align-items: stretch;
 }
 
 #sidebar {
-    width: 280px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    z-index: 999;
+    min-width: 250px;
+    max-width: 250px;
     background: #E2E2E2;
     color: #555;
     transition: all 0.3s;
 }
 
 #sidebar.active {
-    margin-left: -280px;
+    margin-left: -250px;
 }
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #E2E2E2;
 }
 
 #sidebar ul.components {
@@ -96,10 +93,10 @@ a:focus {
     background: #555;
 }
 
-#sidebar ul li.active>a,
+#sidebar ul li.active > a,
 a[aria-expanded="true"] {
     color: #555;
-    background: #E2E2E2;
+    background: #B2B2B2;
 }
 
 a[data-toggle="collapse"] {
@@ -117,7 +114,7 @@ a[data-toggle="collapse"] {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #E2E2E2;
+    background: #B2B2B2;
 }
 
 ul.CTAs {
@@ -139,7 +136,7 @@ a.download {
 
 a.article,
 a.article:hover {
-    background: #E2E2E2 !important;
+    background: #B2B2B2 !important;
     color: #555 !important;
 }
 
@@ -149,16 +146,10 @@ a.article:hover {
 
 #content {
     width: calc(100% - 280px);
-    padding: 40px;
+    float: right;
+    padding: 20px;
     min-height: 100vh;
     transition: all 0.3s;
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
-#content.active {
-    width: 100%;
 }
 
 /* ---------------------------------------------------
@@ -167,24 +158,20 @@ a.article:hover {
 
 @media (max-width: 768px) {
     #sidebar {
-        margin-left: -280px;
+        margin-left: -250px;
     }
+
     #sidebar.active {
         margin-left: 0;
     }
-    #content {
-        width: 100%;
-    }
-    #content.active {
-        width: calc(100% - 280px);
-    }
+
     #sidebarCollapse span {
         display: none;
     }
 }
 
-.sidebar-logo{
-	background: url("/s/img/b2w-logo.png") no-repeat top left;
-	width: 240px;
-	height: 140px;
+.sidebar-logo {
+    background: url("/s/img/b2w-logo.png") no-repeat top left;
+    width: 240px;
+    height: 140px;
 }

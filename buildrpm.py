@@ -12,8 +12,8 @@ tmpfp.write(docker_compose_content)
 print(docker_compose_content)
 tmpfp.flush()
 
-target_dir = '/opt/dragonking/dragonking_frontend/'
-cmd = ['fpm', '-s', 'dir', '-t', 'rpm', '-n', 'tkamc-dragonking-frontend',
+target_dir = '/opt/b2w/'
+cmd = ['fpm', '-s', 'dir', '-t', 'rpm', '-n', 'b2w-management',
        '-a', 'noarch', '-f',
        '{}={}docker-compose.yml'.format(tmpfp.name, target_dir)]
 

@@ -1,13 +1,13 @@
 version: "2"
 services:
   app:
-    image: xxx.xxx.xxx:80/B2W/B2W_frontend:${IMG_TAG}
+    image: xxx.xxx.xxx:80/b2w/b2w_frontend:${IMG_TAG}
     ports:
       - 8008:80
     environment:
       LOG_LEVEL: info
-      CONF_MYSQL_B2W_HOST: 127.0.0.1
-      CONF_MYSQL_B2W_USER: root
-      CONF_MYSQL_B2W_PASSWD: root
+      CONF_MYSQL_B2W_HOST: www.snakesidecar.com
+      CONF_MYSQL_B2W_USER: snakesid_b2w
+      CONF_MYSQL_B2W_PASSWD: dragoon881112
       CONF_MYSQL_B2W_PORT: 3306
       CONF_MYSQL_B2W_DB: b2w

@@ -1,7 +1,7 @@
 version: "2"
 services:
   app:
-    image: xxx.xxx.xxx:80/B2W/B2W_frontend:${IMG_TAG}
+    image: xxx.xxx.xxx:80/b2w/b2w_frontend:${IMG_TAG}
     build:
       context: ./
       dockerfile: Dockerfile

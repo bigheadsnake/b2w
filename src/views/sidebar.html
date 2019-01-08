@@ -1,28 +1,34 @@
 <div class="wrapper">
     <!-- Sidebar  -->
     <nav id="sidebar">
-        <div class="sidebar-header">
-            <div class="sidebar-logo"></div>
+        <input type="hidden" id="sidebar_flag" value="1">
+        <div class="sidebar-header sidebar-logo">
         </div>
 
         <ul class="list-unstyled components">
-            <p>Supply and marketing management system</p>
+            <p>Management System</p>
             <li class="active">
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Stock Goods</a>
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Stock</a>
                 <ul class="collapse list-unstyled" id="homeSubmenu">
                     <li>
                         <a href="#">Stock Accessories</a>
                     </li>
                     <li>
-                        <a href="#">Stock Goods</a>
+                        <a href="#">Stock Motor Parts</a>
+                    </li>
+                    <li>
+                        <a href="#">Home 3</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Sale</a>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
                 <ul class="collapse list-unstyled" id="pageSubmenu">
                     <li>
-                        <a href="#">Individual Selling</a>
+                        <a href="#">Page 1</a>
                     </li>
                     <li>
                         <a href="#">Page 2</a>
@@ -50,23 +56,27 @@
         </ul>
     </nav>
 </div>
-
 <!-- Popper.JS -->
-<script src="/s/js/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+<script src="/s/js/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
         crossorigin="anonymous"></script>
-<!-- jQuery Custom Scroller CDN -->
-<script src="/s/js/jquery.mCustomScrollbar.concat.min.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $("#sidebar").mCustomScrollbar({
-            theme: "minimal"
-        });
-
         $('#sidebarCollapse').on('click', function () {
-            $('#sidebar, #content').toggleClass('active');
-            $('.collapse.in').toggleClass('in');
-            $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            var $sidebar_val = $('#sidebar');
+            var $sidebar_flag = $('#sidebar_flag');
+            $sidebar_val.toggleClass('active');
+            if ($sidebar_flag.val() == "1") {
+                $sidebar_flag.val("0");
+                $sidebar_val.css("display", "none");
+                $('#content').css("width", "100%");
+            }
+            else {
+                $sidebar_flag.val("1");
+                $sidebar_val.css("display", "block");
+                $('#content').css("width", "calc(100% - 280px)");
+            }
         });
     });
 </script>

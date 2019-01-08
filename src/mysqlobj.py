@@ -38,10 +38,10 @@ class MysqlObj:
             self.cur.execute(sql, params)
         except pymysql.OperationalError:
             # mysql timed out. retry
-            #if e[0#] == 2006:
+            # if e[0#] == 2006:
             #    self.connect()
             #    self.cur.execute(sql, params)
-            #else:
+            # else:
             print("Query Failed Lv1")
             raise
         except Exception:
@@ -233,10 +233,14 @@ class MysqlObj:
             data = []
         if len(data) > 0 and len(update_fields) > 0:
             if fields and len(fields) > 0:
-                sql = f"INSERT INTO `{table}` ({','.join(fields)}) values ({','.join(['%s' for i in data[0]])}) ON DUPLICATE KEY UPDATE {', '.join(['%s = values(%s)' % (f, f) for f in update_fields])}"
+                sql = "INSERT INTO `%s` (%s) values (%s) ON DUPLICATE KEY UPDATE %s" % (
+                    table, ','.join(fields), ','.join(['%s' for i in data[0]]),
+                    ', '.join(["%s = values(%s)" % (f, f) for f in update_fields]))
             else:
-                sql = f"INSERT INTO `{table}` values ({','.join(['%s' for i in data[0]])}) ON DUPLICATE KEY UPDATE {', '.join(['%s = values(%s)' % (f, f) for f in update_fields])}"
-            return self.cur.executemany(sql, data)
+                sql = "INSERT INTO `%s` values (%s) ON DUPLICATE KEY UPDATE %s" % (
+                    table, ','.join(['%s' for i in data[0]]),
+                    ', '.join(["%s = values(%s)" % (f, f) for f in update_fields]))
+        return self.cur.executemany(sql, data)
 
     @staticmethod
     def _update_format(data):
