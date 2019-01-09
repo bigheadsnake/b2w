@@ -1,0 +1,18 @@
+.top-info{
+}
+
+#sidebarCollapse{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.log-info{
+    margin-top: 20px;
+    margin-right: 50px;
+    float: right;
+}
+
+.log-out-link{
+    margin-left: 20px;
+    color: rgb(19, 132, 150);
+}

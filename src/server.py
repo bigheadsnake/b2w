@@ -6,6 +6,7 @@ from bottle import route, run, template, static_file, install, mako_view, reques
 from bottle_mysql import MysqlPlugin
 from bottle_auth import AuthPlugin
 import priviledge
+import table_conf
 import utils
 
 install(MysqlPlugin())
@@ -39,7 +40,11 @@ def make_priviledge_vars(url):
 
 def make_template_vars(fn):
     def wrapper(*args, **kwargs):
-        dft_vars = {'active_user': ''
+        if 'user' in kwargs:
+            username = kwargs['user'].username
+        else:
+            username = None
+        dft_vars = {'username': username
                     }
         r = fn(*args, **kwargs)
         # 使用 r 更新 dft_vars
@@ -108,6 +113,22 @@ def welcome(db, user):
     # error = request.query.error or None
 
     return {"page_title": u"Beyond 2 Wheels"}
+
+
+@route('/cargo/<web>')
+@mako_view('cargo.html')
+@make_priviledge_vars('/cargo')
+@make_template_vars
+@make_login_vars
+def cargo_management(db, user, web):
+
+    tbldat = {}
+
+    tbldat['titles'] = table_conf.get_fields_titles(db, "cargo_management")
+    # f, rows = dbutils.get_table_dat(db, 'dk_WorkingProgress', 'StatDate', 'DESC', (0, 3))#
+    # error = request.query.error or None
+
+    return {"page_title": u"Cargo Type of " + web.capitalize() + " Management", "tbldat": tbldat}
 
 
 @route('/s/<filepath:path>')

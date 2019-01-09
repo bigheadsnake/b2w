@@ -7,6 +7,22 @@ body, p, ul, ol, button, input, select, textarea {
     color: #999;
 }
 
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: calc(100% - 250px);
+    float: right;
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s ease;
+}
+
+#content.active{
+    width: 100%;
+}
+
 .copyright {
     font-family: proxima-nova, serif;
     font-size: 15px;
@@ -14,8 +30,8 @@ body, p, ul, ol, button, input, select, textarea {
     font-style: normal;
     letter-spacing: .02em;
     line-height: 1.6em;
-    margin: 0 auto;
     text-align: center;
+    margin: 0 auto 20px;
 }
 
 .b2w-footer {

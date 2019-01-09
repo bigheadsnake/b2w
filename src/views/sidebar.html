@@ -1,7 +1,6 @@
-<div class="wrapper">
+<div class="sidebar-wrapper" id="sidebar-wrapper">
     <!-- Sidebar  -->
     <nav id="sidebar">
-        <input type="hidden" id="sidebar_flag" value="1">
         <div class="sidebar-header sidebar-logo">
         </div>
 
@@ -22,19 +21,13 @@
                 </ul>
             </li>
             <li>
-                <a href="#">About</a>
-            </li>
-            <li>
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Cargo</a>
                 <ul class="collapse list-unstyled" id="pageSubmenu">
                     <li>
-                        <a href="#">Page 1</a>
+                        <a href="/cargo/accessories">Accessories</a>
                     </li>
                     <li>
-                        <a href="#">Page 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Page 3</a>
+                        <a href="#">Motor Parts</a>
                     </li>
                 </ul>
             </li>
@@ -64,19 +57,8 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $('#sidebarCollapse').on('click', function () {
-            var $sidebar_val = $('#sidebar');
-            var $sidebar_flag = $('#sidebar_flag');
-            $sidebar_val.toggleClass('active');
-            if ($sidebar_flag.val() == "1") {
-                $sidebar_flag.val("0");
-                $sidebar_val.css("display", "none");
-                $('#content').css("width", "100%");
-            }
-            else {
-                $sidebar_flag.val("1");
-                $sidebar_val.css("display", "block");
-                $('#content').css("width", "calc(100% - 280px)");
-            }
+            $('#sidebar-wrapper').toggleClass('active');
+            $('#content').toggleClass('active');
         });
     });
 </script>
