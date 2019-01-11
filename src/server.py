@@ -3,10 +3,14 @@
 
 from bottle import route, run, template, static_file, install, mako_view, request, get, post, response, default_app, \
     redirect
+
 from bottle_mysql import MysqlPlugin
 from bottle_auth import AuthPlugin
+import pandas as pd
+import json
+import dbutils
 import priviledge
-import table_conf
+import structures
 import utils
 
 install(MysqlPlugin())
@@ -124,11 +128,19 @@ def cargo_management(db, user, web):
 
     tbldat = {}
 
-    tbldat['titles'] = table_conf.get_fields_titles(db, "cargo_management")
-    # f, rows = dbutils.get_table_dat(db, 'dk_WorkingProgress', 'StatDate', 'DESC', (0, 3))#
+    tbldat['titles'] = structures.get_fields(db, "cargo_management", "title")
+    tbldat['fiedls'] = structures.get_fields(db, "cargo_management", "field")
+    _, tbldat['rows'] = dbutils.get_table_dat(db, 'cargo_management', 'cargo_category_L1, cargo_category_L2, '
+                                                                      'cargo_category_L3, cargo_category_L4', 'ASC',
+                                              select_fields=','.join(tbldat['fiedls']))
+
+    df = pd.DataFrame(data=tbldat['rows'], columns=tbldat['titles'])
+    headers = json.dumps(list(df.columns.values))
+    values = json.dumps(df.values.tolist())
+
     # error = request.query.error or None
 
-    return {"page_title": u"Cargo Type of " + web.capitalize() + " Management", "tbldat": tbldat}
+    return {"page_title": u"Cargo Type of " + web.capitalize() + " Management", "headers": headers, "values": values}
 
 
 @route('/s/<filepath:path>')
