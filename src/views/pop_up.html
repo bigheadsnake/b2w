@@ -1,0 +1,42 @@
+<div id="popup1" class="overlay">
+	<div class="popup">
+		<h2>Here i am</h2>
+		<a class="close" href="#">&times;</a>
+		<div class="content">
+			HTML  SCSS Result
+			EDIT ON
+			 <form class="go-bottom">
+			  <h2>To Bottom</h2>
+			  <select name="department_l1" id="department_l1" class="form-control" multiple="multiple">
+				  <option>Mustard</option>
+				  <option>Ketchup</option>
+				  <option>Relish</option>
+			  </select>
+			  <div>
+				<input id="name" name="name" type="text" required>
+				<label for="name">Your Name</label>
+			  </div>
+			  <div>
+				<input id="phone" name="phone" type="tel" required>
+				<label for="phone">Primary Phone</label>
+			  </div>
+			  <div>
+				<textarea id="message" name="phone" required></textarea>
+				<label for="message">Message</label>
+			  </div>
+			</form>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#department_l1').multiselect({
+			nonSelectedText: "请选择",
+			nSelectedText: "项被选中",
+			buttonWidth: '100px',
+			maxHeight: 200,
+			selectAllText: '全部',
+			allSelectedText: '全选'
+		});
+	});
+</script>

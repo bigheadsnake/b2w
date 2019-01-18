@@ -23,6 +23,10 @@ body, p, ul, ol, button, input, select, textarea {
     width: 100%;
 }
 
+/* ---------------------------------------------------
+    FOOTER STYLE
+----------------------------------------------------- */
+
 .copyright {
     font-family: proxima-nova, serif;
     font-size: 15px;
@@ -32,6 +36,37 @@ body, p, ul, ol, button, input, select, textarea {
     line-height: 1.6em;
     text-align: center;
     margin: 0 auto 20px;
+}
+
+/* ---------------------------------------------------
+    NAVBAR STYLE
+----------------------------------------------------- */
+
+.navbar{
+	position: inherit;
+}
+
+.cargo-table-container{
+	padding: 20px;
+}
+
+.add-cargo-text{
+	width: 150px;
+	height: 40px;
+}
+
+.add-cargo-btn{
+	border: none;
+	color: #E2E2E2;
+    background: #555;
+    font-size: 1.1em;
+    display: inline-block;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 5px;
+	width: 150px;
+	height: 40px;
+	cursor: pointer;
 }
 
 .b2w-footer {

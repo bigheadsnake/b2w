@@ -140,7 +140,8 @@ def cargo_management(db, user, web):
 
     # error = request.query.error or None
 
-    return {"page_title": u"Cargo Type of " + web.capitalize() + " Management", "headers": headers, "values": values}
+    return {"page_title": u"Cargo Type of " + web.capitalize() + " Management", "tbldat": tbldat,
+            "headers": headers, "values": values}
 
 
 @route('/s/<filepath:path>')
